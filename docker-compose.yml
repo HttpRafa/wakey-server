@@ -1,0 +1,9 @@
+services:
+  wakey:
+    build:
+      context: .
+    ports:
+      - "4567:4567"
+    volumes:
+      - /data/wakey:/data/wakey
+    restart: unless-stopped
