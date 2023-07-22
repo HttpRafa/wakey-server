@@ -4,6 +4,7 @@ FROM eclipse-temurin:${JAVA_VERSION} AS builder
 WORKDIR /build
 
 COPY ./ ./
+RUN chmod +x gradlew
 RUN ./gradlew clean build --no-daemon
 
 FROM eclipse-temurin:${JAVA_VERSION} AS runtime
